@@ -3,7 +3,7 @@
 # run the application by clicking 'Run App' above.
 #
 # Find out more about building applications with Shiny here:
-# 
+#
 #    http://shiny.rstudio.com/
 #
 
@@ -11,36 +11,30 @@ library(shiny)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
-  
+
   # Application title
   titlePanel("Lançamentos de Dois Dados"),
-  
-  # Sidebar with a slider input for number of bins 
+
+  # Sidebar with a slider input for number of bins
   sidebarLayout(
     sidebarPanel(
-      actionButton("d02", label = "2"),
-      p(),
-      actionButton("d03", label = "3"),
-      p(),
-      actionButton("d04", label = "4"),
-      p(),
-      actionButton("d05", label = "5"),
-      p(),
-      actionButton("d06", label = "6"),
-      p(),
-      actionButton("d07", label = "7"),
-      p(),
-      actionButton("d08", label = "8"),
-      p(),
-      actionButton("d09", label = "9"),
-      p(),
-      actionButton("d10", label = "10"),
-      p(),
-      actionButton("d11", label = "11"),
-      p(),
-      actionButton("d12", label = "12")
-    ),
-    
+      p("Resultado:"),
+      p("02: ", actionButton("p02", label = "+"), actionButton("m02", label = "-")),
+      p("03: ", actionButton("p03", label = "+"), actionButton("m03", label = "-")),
+      p("04: ", actionButton("p04", label = "+"), actionButton("m04", label = "-")),
+      p("05: ", actionButton("p05", label = "+"), actionButton("m05", label = "-")),
+      p("06: ", actionButton("p06", label = "+"), actionButton("m06", label = "-")),
+      p("07: ", actionButton("p07", label = "+"), actionButton("m07", label = "-")),
+      p("08: ", actionButton("p08", label = "+"), actionButton("m08", label = "-")),
+      p("09: ", actionButton("p09", label = "+"), actionButton("m09", label = "-")),
+      p("10: ", actionButton("p10", label = "+"), actionButton("m10", label = "-")),
+      p("11: ", actionButton("p11", label = "+"), actionButton("m11", label = "-")),
+      p("12: ", actionButton("p12", label = "+"), actionButton("m12", label = "-")),
+      hr(),
+      checkboxInput("esperado", label = "Valor Esperado", value = TRUE)
+      ),
+
+
     # Show a plot of the generated distribution
     mainPanel(
        plotOutput("distPlot")
